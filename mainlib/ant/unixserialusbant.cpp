@@ -33,7 +33,7 @@ UnixSerialUsbAnt::UnixSerialUsbAnt(QObject *parent) :
     AntDevice(parent)
 {
     QSerialPortInfo garminSerialPortInfo = findGarminUsb1Stick();
-    if (garminSerialPortInfo.isValid()) {
+    if (garminSerialPortInfo.isNull()) {
         openSerialConnection(garminSerialPortInfo);
         emit deviceReady();
     }
