@@ -128,7 +128,7 @@ void RealLifeVideoImporter::importReady(const RealLifeVideoList &rlvs)
         }
     }
     // sort rlv list by name
-    qSort(validRlvs.begin(), validRlvs.end(), RealLifeVideo::compareByName);
+    std::sort(validRlvs.begin(), validRlvs.end(), RealLifeVideo::compareByName);
 
     emit importFinished(validRlvs);
 }
