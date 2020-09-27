@@ -126,8 +126,7 @@ int main(int argc, char *argv[])
 
     a.setApplicationVersion(APP_VERSION);
     a.setWindowIcon(QIcon(QPixmap(":/BigRingIcon.png")));
-    a.setOrganizationDomain("org.github.ibooij");
-    a.setOrganizationName("Ilja Booij");
+    a.setOrganizationName("big-ring");
     a.setApplicationName("Big Ring Indoor Video Cycling");
 
     Options options = parseCommandLine(a);
