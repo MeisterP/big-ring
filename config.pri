@@ -1,7 +1,7 @@
 # if installed, point to the source directory of google test here.
 
 QT_VERSION = 5
-QMAKE_CXXFLAGS += -std=c++11 -W -Wall -Wextra -Werror
+QMAKE_CXXFLAGS += -std=c++11 -W -Wall -Wextra
 QT       += core concurrent gui opengl network serialport widgets positioning
 
 VERSION = 1.8.0.0
