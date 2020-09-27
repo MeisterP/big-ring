@@ -53,10 +53,10 @@ void ThumbnailCreatingVideoReader::openVideoFileInternal(const QString &videoFil
     GenericVideoReader::openVideoFileInternal(videoFilename);
 
     _frameRgb.reset(new AVFrameWrapper);
-    int numBytes= avpicture_get_size(PIX_FMT_RGB24,
+    int numBytes= avpicture_get_size(AV_PIX_FMT_RGB24,
           codecContext()->width, codecContext()->height);
     _imageBuffer.resize(numBytes);
-    avpicture_fill(_frameRgb->asPicture(), reinterpret_cast<uint8_t*>(_imageBuffer.data()), PIX_FMT_RGB24,
+    avpicture_fill(_frameRgb->asPicture(), reinterpret_cast<uint8_t*>(_imageBuffer.data()), AV_PIX_FMT_RGB24,
                    codecContext()->width, codecContext()->height);
 
     _swsContext = sws_getContext(codecContext()->width, codecContext()->height, AV_PIX_FMT_YUV420P,
