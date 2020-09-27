@@ -180,7 +180,7 @@ void ProfilePainter::drawAltitudeMarkers(QPainter &painter, const QRect &rect, c
                 .arg(_quantityPrinter->unitForAltitude());
         painter.drawText(5, rect.height() - y - 5, text);
         QFontMetrics fontMetrics(painter.font());
-        int width = fontMetrics.width(text);
+        int width = fontMetrics.horizontalAdvance(text);
         painter.drawText(rect.width() - width - 10, rect.height() - y - 5, text);
     }
 }
