@@ -144,11 +144,9 @@ MODEL_SOURCES += \
     model/virtualpower.cpp
 
 NETWORK_HEADERS += \
-    network/analyticssender.h \
     network/versionchecker.h
 
 NETWORK_SOURCES += \
-    network/analyticssender.cpp \
     network/versionchecker.cpp
 
 RIDE_HEADERS += \

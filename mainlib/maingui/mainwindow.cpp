@@ -37,7 +37,6 @@
 #include "ant/antcentraldispatch.h"
 #include "model/cyclist.h"
 #include "model/simulation.h"
-#include "network/analyticssender.h"
 #include "network/versionchecker.h"
 #include "ridegui/run.h"
 #include "ridegui/newvideowidget.h"
@@ -49,8 +48,7 @@ MainWindow::MainWindow(bool showDebugOutput, QWidget *parent) :
     _menuBar(new QMenuBar),
     _stackedWidget(new QStackedWidget),
     _showDebugOutput(showDebugOutput),
-    _listView(new VideoListView(this)),
-    _analyticsSender(new AnalyticsSender(this))
+    _listView(new VideoListView(this))
 {
     Q_INIT_RESOURCE(icons);
     _antCentralDispatch->initialize();
