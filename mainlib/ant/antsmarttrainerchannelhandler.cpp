@@ -1,4 +1,5 @@
 #include "antsmarttrainerchannelhandler.h"
+#include <cmath>
 
 #include <QtCore/QtDebug>
 namespace {

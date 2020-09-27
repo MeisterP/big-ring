@@ -29,6 +29,7 @@
 #include "model/unitconverter.h"
 
 #include <array>
+#include <cmath>
 
 namespace
 {
