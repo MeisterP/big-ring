@@ -23,6 +23,7 @@
 #include <QtCore/QObject>
 #include <QtCore/QTime>
 #include <QtCore/QTimer>
+#include <QtCore/QElapsedTimer>
 
 #include "antchannelhandler.h"
 namespace indoorcycling {
@@ -109,7 +110,7 @@ private slots:
     void sendMessage();
 private:
     QTimer* const _updateTimer;
-    QTime _lastSendTime;
+    QElapsedTimer _lastSendTime;
 
     int _updateCounter;
     quint8 _heartRate;
