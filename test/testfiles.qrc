@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/FR_Bavella-utf8.xml</file>
+        <file>resources/FR_Bavella.rlv</file>
+        <file>resources/FR_Bavella.pgmf</file>
+    </qresource>
+</RCC>
