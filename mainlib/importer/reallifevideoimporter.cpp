@@ -108,7 +108,7 @@ RealLifeVideoList RealLifeVideoImporter::importRlvFiles(const QStringList& rootF
 
     std::function<RealLifeVideo(const QFileInfo&)> importFunction([this, aviFiles, pgmfFiles](const QFileInfo& fileInfo) -> RealLifeVideo {
         QFile file(fileInfo.canonicalFilePath());
-        RealLifeVideo rlv = parseRealLiveVideoFile(file, aviFiles.toList(), pgmfFiles.toList());
+        RealLifeVideo rlv = parseRealLiveVideoFile(file, aviFiles.values(), pgmfFiles.values());
         QCoreApplication::postEvent(this, new RlvImportedEvent);
         return rlv;
     });
