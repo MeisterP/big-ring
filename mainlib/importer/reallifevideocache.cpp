@@ -31,7 +31,7 @@
 namespace
 {
 const quint32 CACHE_FILE_MAGIC = 0xC4C1FA51;
-const int CACHE_FILE_QDATASTREAM_VERSION = QDataStream::Qt_5_4;
+const int CACHE_FILE_QDATASTREAM_VERSION = QDataStream::Qt_5_14;
 }
 
 std::unique_ptr<RealLifeVideo> RealLifeVideoCache::load(const QFile &rlvFile)
