@@ -130,7 +130,7 @@ void MainWindow::newVersionAvailable(bool newVersion, const QString &version)
 {
     if (newVersion && !_run) {
         const QString detailedText = tr("There is a new version of Big Ring available. Download version %1 from "
-                                        "<a href='https://ibooij.github.io/big-ring/'>https://ibooij.github.io/big-ring/</a>.").arg(version);
+                                        "<a href='https://github.com/MeisterP/big-ring/releases/'>https://github.com/MeisterP/big-ring/releases/</a>.").arg(version);
         QMessageBox informationBox(this);
         informationBox.setWindowTitle(tr("New version available"));
         informationBox.setTextFormat(Qt::RichText);

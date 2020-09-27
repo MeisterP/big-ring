@@ -26,7 +26,7 @@
 #include <QtNetwork/QNetworkReply>
 #include <QtNetwork/QNetworkRequest>
 namespace {
-const QString RELEASES_URL = "https://api.github.com/repos/ibooij/big-ring/releases/latest";
+const QString RELEASES_URL = "https://api.github.com/repos/MeisterP/big-ring/releases/latest";
 }
 
 VersionChecker::VersionChecker(QObject *parent) :
