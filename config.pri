@@ -9,7 +9,7 @@ DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 INCLUDEPATH = $$PWD
 
 linux {
-    PKGCONFIG += libavcodec libavformat libavutil libswscale libusb-1.0
+    PKGCONFIG += libavcodec libavformat libavutil libswscale libusb-1.0 libusb
     CONFIG += link_pkgconfig
 }
 

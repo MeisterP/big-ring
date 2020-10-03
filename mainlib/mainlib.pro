@@ -9,7 +9,6 @@ RESOURCES += \
 target = mainlib
 target.path = ../lib
 CONFIG += staticlib
-INCLUDEPATH += thirdparty/include
 
 ANT_HEADERS += \
     ant/antdevice.h \
@@ -39,12 +38,6 @@ ANT_SOURCES += \
     ant/antsmarttrainerchannelhandler.cpp \
     ant/antspeedandcadencechannelhandler.cpp \
     ant/unixserialusbant.cpp \
-
-linux {
-    ANT_SOURCES += thirdparty/libusb-compat/core.c
-    ANT_HEADERS += thirdparty/libusb-compat/usb.h \
-                   thirdparty/libusb-compat/usbi.h
-}
 
 CONFIG_HEADERS += \
     config/bigringsettings.h \

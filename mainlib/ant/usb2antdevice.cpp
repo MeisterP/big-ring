@@ -25,7 +25,7 @@
 #include <QtCore/QThread>
 
 extern "C" {
-#include "thirdparty/libusb-compat/usb.h"
+#include "usb.h"
 }
 
 namespace
