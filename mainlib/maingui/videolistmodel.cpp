@@ -29,9 +29,11 @@ VideoListModel::VideoListModel(QObject *parent) :
 void VideoListModel::setVideos(RealLifeVideoList &rlvs)
 {
     qDebug() << "settings videos in model";
+    emit layoutAboutToBeChanged();
     beginInsertRows(QModelIndex(), 0, 0);
     _rlvs = rlvs;
     endInsertRows();
+    emit layoutChanged();
 }
 
 int VideoListModel::rowCount(const QModelIndex &) const
