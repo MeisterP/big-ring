@@ -24,9 +24,7 @@
 #include <QtCore/QObject>
 #include <QtWidgets/QWidget>
 
-#ifdef Q_OS_LINUX
 #include <QtCore/QProcess>
-#endif
 
 namespace indoorcycling
 {

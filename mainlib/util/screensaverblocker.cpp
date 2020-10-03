@@ -23,12 +23,7 @@
 #include <QtCore/QDebug>
 
 #include <QtCore/QTimer>
-#ifdef Q_OS_LINUX
 #include <QtCore/QProcess>
-#endif
-#ifdef Q_OS_WIN
-#include <windows.h>
-#endif
 
 namespace
 {
@@ -49,8 +44,6 @@ ScreenSaverBlocker::~ScreenSaverBlocker()
 {
     unblockScreenSaver();
 }
-
-#ifdef Q_OS_LINUX
 
 // On Linux, there seems to be no single way of blocking the screensaver.
 // Using xdg-screensaver works on most systems, so we'll use that. This
@@ -103,30 +96,7 @@ void ScreenSaverBlocker::resetScreenSaverForDesktopEnvironment(const QString &co
     connect(process, SIGNAL(finished(int)), process, SLOT(deleteLater()));
     process->start(command);
 }
-#else
 
-#ifdef Q_OS_WIN
-
-// On Windows, blocking the screen saver is easy. We call the
-// SetThreadExecutionState function
-// (https://msdn.microsoft.com/en-us/library/aa373208%28VS.85%29.aspx),
-// with ES_DISPLAY_REQUIRED when we want to block the screen saver.
-// When blocking is no longer needed, we call SetThreadExecutionState again,
-// with only ES_CONTINUOUS.
-void ScreenSaverBlocker::blockScreenSaver()
-{
-    SetThreadExecutionState(ES_DISPLAY_REQUIRED | ES_CONTINUOUS);
-}
-
-void ScreenSaverBlocker::unblockScreenSaver()
-{
-    SetThreadExecutionState(ES_CONTINUOUS);
-}
-#endif
-#endif
-
-
-#ifndef Q_OS_WIN
 // this method will only be called on Linux, so we wont implement
 // anything for Windows.
 void ScreenSaverBlocker::handleError(QProcess::ProcessError error)
@@ -141,5 +111,4 @@ void ScreenSaverBlocker::handleError(QProcess::ProcessError error)
     }
     process->deleteLater();
 }
-#endif
 }

@@ -19,11 +19,7 @@
  */
 
 #include "antdevicefinder.h"
-#ifdef Q_OS_WIN
-//#include "usbexpressantdevice.h"
-#else
 #include "unixserialusbant.h"
-#endif
 #include "usb2antdevice.h"
 #include <QtDebug>
 
@@ -45,11 +41,7 @@ std::unique_ptr<AntDevice> AntDeviceFinder::openAntDevice()
     AntDeviceType type = findAntDeviceType();
     switch(type) {
     case AntDeviceType::USB_1:
-#ifdef Q_OS_LINUX
         return std::unique_ptr<AntDevice>(new UnixSerialUsbAnt);
-#else
-//        return std::unique_ptr<AntDevice>(new UsbExpressAntDevice);
-#endif
     case AntDeviceType::USB_2:
         return std::unique_ptr<AntDevice>(new Usb2AntDevice);
     default:
