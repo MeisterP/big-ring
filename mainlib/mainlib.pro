@@ -24,6 +24,7 @@ ANT_HEADERS += \
     ant/antpowerchannelhandler.h \
     ant/antsmarttrainerchannelhandler.h \
     ant/antspeedandcadencechannelhandler.h \
+    ant/unixserialusbant.h \
 
 ANT_SOURCES += \
     ant/antdevice.cpp \
@@ -36,16 +37,13 @@ ANT_SOURCES += \
     ant/antheartratechannelhandler.cpp \
     ant/antpowerchannelhandler.cpp \
     ant/antsmarttrainerchannelhandler.cpp \
-    ant/antspeedandcadencechannelhandler.cpp
+    ant/antspeedandcadencechannelhandler.cpp \
+    ant/unixserialusbant.cpp \
 
 linux {
     ANT_SOURCES += thirdparty/libusb-compat/core.c
     ANT_HEADERS += thirdparty/libusb-compat/usb.h \
                    thirdparty/libusb-compat/usbi.h
-}
-!win32 {
-    ANT_HEADERS += ant/unixserialusbant.h
-    ANT_SOURCES += ant/unixserialusbant.cpp
 }
 
 CONFIG_HEADERS += \
@@ -236,7 +234,4 @@ FORMS += \
     $$MAINGUI_FORMS
 
 LIBS +=  -lusb-1.0
-
-
-
 
